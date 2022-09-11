@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegishop-Online Grocery SuperMarket</title>
+    <script src="https://kit.fontawesome.com/9d7d2185fb.js" crossorigin="anonymous"></script>
+   <style>
+    /* ---------------Top-bar--------------------------------- */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-animate: linear-gradient(135deg, #eb543b 0%, #fbbf3b 100%);
+}
+
+/* ---------------Top-bar--------------------------------- */
+.top-bar {
+    width: 100%;
+    height: 25px;
+    background-color: #faf2f5;
+    /* background-color: red; */
+}
+
+.row1 {
+    display: flex;
+    color: #343a40;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.container1 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.col-md-6 a {
+    color: #343a40;
+    margin: 0 4px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.col-md-6 a .fa-solid {
+    margin: 0 5px;
+}
+
+/* ----------------Middle-bar------------------------------------------ */
+.navbar {
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+}
+
+.navbar-container {
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.right-top img {
+    width: 60px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav .btn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #dee2e6;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    align-items: center;
+    justify-content: center;
+
+}
+
+.location {
+    display: flex;
+    margin-left: 5px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.text>p {
+    color: #545556;
+}
+
+.text span {
+    font-size: 15px;
+}
+
+.input {
+    display: flex;
+    margin-left: 15px;
+}
+
+.text-input {
+    width: 25rem;
+    padding: 5px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid #dee2e6;
+}
+
+.btn1 {
+
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    background: linear-gradient(135deg, #eb543b 0%, #fbbf3b 100%);
+}
+
+.btn1 i {
+    position: relative;
+    top: 8px;
+    left: 4px;
+}
+
+.right-top {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.right-top .user>img {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.internal {
+    display: inline;
+    position: relative;
+    top: -14px;
+}
+
+.right-top .content {
+    margin: 10px;
+}
+
+/* ---------------hover style--------------------------------- */
+.internal1 {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    top: 200px;
+    border-radius: 5px;
+    flex-direction: column;
+
+    width: 167px;
+    height: fit-content;
+    align-items: flex-start;
+    text-decoration: none;
+    display: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 8px #888888;
+    z-index: 10;
+}
+
+.dropdown:hover .internal1 {
+    display: block;
+    top: 160px;
+}
+
+.dropdown .internal1 li {
+    margin: 7px;
+    color: rgb(50, 49, 49);
+    width: 97%;
+    padding: 0;
+}
+
+.dropdown .internal1 li:hover {
+    width: 153px;
+    height: fit-content;
+    background-color: #888888;
+}
+
+/* -----------------Bell dropdown------------ */
+.bell-dropdown {
+    position: absolute;
+    width: 300px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 115px;
+    z-index: 10;
+    right: 15%;
+    box-shadow: 1px 1px 8px #888888;
+}
+
+.content1 {
+    width: 95%;
+    border-radius: 5px;
+    padding: 13px 14px;
+    height: 75px;
+    margin: 10px 9px;
+    background-color: #dee2e6;
+    display: none;
+
+}
+
+.content1 h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: rgb(50, 49, 49);
+}
+
+.content1 p {
+    color: hwb(180 43% 56%);
+    display: inline;
+    font-size: 10px;
+}
+
+.content1 .img {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: rgb(184, 243, 154);
+    bottom: 1rem;
+    padding: 6px 6px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+.content1 p .fa-solid {
+    display: inline;
+}
+
+.dropdown:hover .content1 {
+    display: block;
+}
+
+
+/* ----------------------Location dropdown----------------------- */
+.bell-dropdown1 {
+    position: absolute;
+    width: 300px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 115px;
+    z-index: 10;
+    left: 13%;
+    box-shadow: 1px 1px 8px #888888;
+}
+
+.contnet2 {
+    width: 95%;
+    border-radius: 5px;
+    padding: 13px 14px;
+    height: fit-content;
+    margin: 18px 8px;
+    display: none
+}
+
+.upper-text {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.contnet2 form {
+    margin: 3px;
+}
+
+.search-city {
+    outline: none;
+    padding: 5px;
+    border: 1px solid #888888;
+}
+
+.detect {
+    border: 1px solid #fbbf3b;
+    outline: none;
+    padding: 4px;
+    color: #fff;
+    background: linear-gradient(135deg, #eb543b 0%, #fbbf3b 100%);
+}
+
+.detect i {
+    font-size: 11px;
+    margin: 5px;
+}
+
+.contnet2 h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 2px;
+}
+
+.contnet2 ul {
+    text-decoration: none;
+    list-style: none;
+    margin: 10px 2px;
+}
+
+.list-item {
+    color: #888888;
+    padding: 8px 0px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #888888;
+}
+
+.location:hover .contnet2 {
+    display: block;
+}
+
+/* ---------------LAst navabar---------------------------------- */
+.bottom-bar {
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(135deg, #eb543b 0%, #fbbf3b 100%);
+    ;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* .col-md-5 ul li{ */
+/* text-decoration: none;
+color: white;
+font-size: 14px;
+margin-left: 20px;
+} */
+/* .col-md-5 a .fa-solid{
+position: relative;
+top: 8;
+font-size: 18px;
+margin: 0 7px;
+} */
+.row ul li {
+    display: inline-block;
+    margin: 12px 7px;
+    color: white;
+    cursor: pointer;
+}
+
+.row ul li .fa-solid {
+    position: relative;
+    top: -2px;
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+.row .right-side {
+    position: relative;
+    bottom: 38px;
+    color: #fff;
+    right: 20px;
+    float: right;
+    text-decoration: none;
+    list-style: none;
+}
+
+.row .right-side a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.right-side span {
+    display: inline-block;
+    background-color: #eb543b;
+    height: 42px;
+    width: 70px;
+    position: absolute;
+    top: -3px;
+    text-align: center;
+}
+   </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container1">
+            <div class="row1">
+                <div class="col-md-6">
+                    <ul class="l-top">
+                        <a href="#"><i class="fa-solid fa-check icon"></i>Accurate Weight</a>
+                        <a href="#"><i class="fa-solid fa-check icon"></i>Fresh & Fast</a>
+                        <a href="#"><i class="fa-solid fa-check icon"></i>Sorted Vegetables</a>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="r-top">
+                        <a href="#">
+                            <i class="fa-solid fa-headphones icon"></i>Helpline : 910-313-1728
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="right-top">
+                <a href="#"><img src="./asset/logo.png" alt=""></a>
+                <div class="location">
+                    <div class="btn">
+                        <i class="fa-solid fa-location-pin"></i>
+                    </div>
+                    <div class="text">
+                        <p>Select Location</p>
+                        <span>Maharashtra India...</span>
+                    </div>
+                    <div class="bell-dropdown1">
+                        <div class="contnet2">
+                            <p class="upper-text">Select your city to start shopping</p>
+                            <form>
+                                <input type="search" name="search" class="search-city" placeholder="Search your location">
+                                <button class="detect"><i class="fa-solid fa-paper-plane"></i>Detect</button>
+                            </form>
+                            <h3>Top cities</h3>
+                            <ul>
+                                <li class="list-item">Delhi</li>
+                                <li class="list-item">Punjab</li>
+                                <li class="list-item">UP</li>
+                                <li class="list-item">Banglore</li>
+                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="text" class="text-input" placeholder="search for Products....">
+                    <div class="btn1">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right-top">
+                <div class="btn content">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </div>
+                <div class="user content">
+                    <img src="./asset/user.png" alt="">
+                    <p class="internal"> Hi Osahan
+                        <i class="fa-solid fa-caret-down"></i>
+                    </p>
+                </div>
+                <div class="btn content dropdown">
+                    <i class="fa-solid fa-bell"></i>
+                    <div class="bell-dropdown">
+                        <div class="content1">
+                            <h3>Yah! order Complete</h3>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p class="text"> Today, 5:14 pm</p>
+                            <div class="img">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                        </div>
+                        <div class="content1">
+                            <h3 class="text">Yah! order Complete</h3>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p> Today, 5:14 pm</p>
+                        </div>
+                        <div class="content1">
+                            <h3>Yah! order Complete</h3>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p class="text">Today, 5:14 pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn  content">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="bottom-bar">
+        <div class="container">
+            <div class="row">
+                <ul>
+                    <li>Home </li>
+                    <li class="dropdown">Product <i class="fa-solid fa-caret-down"></i>
+                        <ul class="internal1">
+                            <li>List</li>
+                            <li>Treading</li>
+                            <li>Details</li>
+                            <li>Most Popular</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">Checkout Process <i class="fa-solid fa-caret-down"></i>
+                        <ul class="internal1">
+                            <li>Cart</li>
+                            <li>Checkout</li>
+                            <li>Successful</li>
+                            <li>Most Popular</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">My Order <i class="fa-solid fa-caret-down"></i>
+                        <ul class="internal1">
+                            <li>Order</li>
+                            <li>Status</li>
+                            <li>Bonus</li>
+                            <li>Discount</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">Extra Page<i class="fa-solid fa-caret-down"></i>
+                        <ul class="internal1">
+                            <li>Order</li>
+                            <li>Status</li>
+                            <li>Bonus</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                            <li>Discount</li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="right-side">
+                    <li><a href="#">Treanding</a></li>
+                    <span>
+                        <li><a href="#">Promo</a></li>
+                    </span>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
